@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno Machine | تكنو مشين — استيراد وتصدير المكن الصناعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12161B;
+    --steel-dark:#1E2731;
+    --steel-line:#2E3A46;
+    --mist:#EDF1F4;
+    --paper:#F7F9FA;
+    --accent-blue:#3E6B8A;
+    --accent-blue-bright:#5C8FB3;
+    --brass:#C08A4E;
+    --amber:#E8A33D;
+    --text-dark:#12161B;
+    --text-mid:#5A6672;
+    --text-light:#EDF1F4;
+    --text-light-mid:#A9B4BD;
+
+    --f-display-en:'Oswald', sans-serif;
+    --f-body-en:'Inter', sans-serif;
+    --f-display-ar:'Cairo', sans-serif;
+    --f-body-ar:'Tajawal', sans-serif;
+    --f-mono:'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--text-dark);
+    font-family:var(--f-body-ar);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  body.lang-en{font-family:var(--f-body-en);}
+  h1,h2,h3,.display{font-family:var(--f-display-ar); font-weight:700;}
+  body.lang-en h1, body.lang-en h2, body.lang-en h3, body.lang-en .display{font-family:var(--f-display-en); text-transform:uppercase; letter-spacing:0.02em;}
+  .mono{font-family:var(--f-mono); letter-spacing:0.03em;}
+
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  section{position:relative;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(18,22,27,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    max-width:1180px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{display:flex; align-items:center; gap:10px; color:var(--text-light);}
+  .logo-mark{
+    width:34px; height:34px; border:2px solid var(--amber);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--f-mono); font-weight:600; font-size:13px; color:var(--amber);
+    flex-shrink:0;
+  }
+  .logo-text{font-family:var(--f-display-en); font-size:19px; letter-spacing:0.04em; font-weight:600;}
+  .logo-text span{color:var(--amber);}
+  nav{display:flex; align-items:center; gap:30px;}
+  nav ul{display:flex; gap:26px;}
+  nav a{color:var(--text-light-mid); font-size:14.5px; font-weight:500; transition:color .2s;}
+  nav a:hover{color:var(--text-light);}
+  .lang-toggle{
+    border:1px solid rgba(255,255,255,0.25); background:transparent; color:var(--text-light);
+    font-family:var(--f-mono); font-size:12.5px; padding:7px 12px; cursor:pointer; letter-spacing:0.05em;
+    transition:all .2s;
+  }
+  .lang-toggle:hover{border-color:var(--amber); color:var(--amber);}
+  .nav-toggle-btn{display:none; background:none; border:none; color:var(--text-light); font-size:24px; cursor:pointer;}
+
+  @media(max-width:860px){
+    nav ul{display:none;}
+    .nav-toggle-btn{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    background:var(--ink);
+    display:flex; align-items:center;
+    position:relative;
+    padding-top:90px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 40%, #000 40%, transparent 100%);
+  }
+  .hero-inner{position:relative; z-index:2; width:100%;}
+  .eyebrow-line{
+    display:flex; align-items:center; gap:12px; margin-bottom:22px;
+  }
+  .eyebrow-line .bar{width:40px; height:2px; background:var(--amber);}
+  .eyebrow-line span{color:var(--amber); font-family:var(--f-mono); font-size:13px; letter-spacing:0.12em;}
+  .hero h1{
+    color:var(--text-light); font-size:clamp(2.4rem, 6vw, 4.6rem); line-height:1.08; max-width:820px;
+  }
+  .hero h1 em{font-style:normal; color:var(--accent-blue-bright);}
+  .hero p.lead{
+    color:var(--text-light-mid); font-size:18px; max-width:560px; margin-top:22px; font-family:var(--f-body-ar);
+  }
+  body.lang-en .hero p.lead{font-family:var(--f-body-en);}
+  .hero-cta{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; font-size:14.5px; font-weight:600; cursor:pointer; border:none;
+    transition:all .2s; font-family:inherit;
+  }
+  .btn-primary{background:var(--amber); color:var(--ink);}
+  .btn-primary:hover{background:#f0b256;}
+  .btn-ghost{background:transparent; color:var(--text-light); border:1px solid rgba(255,255,255,0.3);}
+  .btn-ghost:hover{border-color:var(--text-light);}
+
+  .hero-stats{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    margin-top:70px; border-top:1px solid rgba(255,255,255,0.1);
+    max-width:900px;
+  }
+  .hero-stats div{padding:22px 20px 0; border-inline-start:1px solid rgba(255,255,255,0.1);}
+  .hero-stats div:first-child{border-inline-start:none;}
+  .stat-num{font-family:var(--f-mono); font-size:28px; color:var(--amber); font-weight:600;}
+  .stat-label{color:var(--text-light-mid); font-size:12.5px; margin-top:6px; letter-spacing:0.02em;}
+  @media(max-width:700px){
+    .hero-stats{grid-template-columns:repeat(2,1fr); row-gap:24px;}
+    .hero-stats div:nth-child(3){border-inline-start:none;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{max-width:640px; margin-bottom:56px;}
+  .sec-head .eyebrow-line span{color:var(--accent-blue);}
+  .sec-head .eyebrow-line .bar{background:var(--accent-blue);}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem); color:var(--ink);}
+  .sec-head p{color:var(--text-mid); margin-top:14px; font-size:16.5px;}
+
+  section.pad{padding:100px 0;}
+  .on-dark{background:var(--ink); color:var(--text-light);}
+  .on-dark .sec-head h2{color:var(--text-light);}
+  .on-dark .sec-head p{color:var(--text-light-mid);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:start;}
+  .about-copy p{color:var(--text-mid); font-size:16px; margin-bottom:18px;}
+  .about-copy p:first-child{font-size:19px; color:var(--text-dark); font-weight:500;}
+  .value-list{margin-top:26px; display:flex; flex-direction:column; gap:16px;}
+  .value-item{display:flex; gap:14px; align-items:flex-start;}
+  .value-dot{width:8px; height:8px; background:var(--brass); margin-top:8px; flex-shrink:0;}
+  .value-item strong{display:block; font-size:15.5px; margin-bottom:2px;}
+  .value-item span{color:var(--text-mid); font-size:14.5px;}
+
+  .about-panel{
+    background:var(--steel-dark); color:var(--text-light);
+    padding:38px; position:relative;
+  }
+  .about-panel::before{
+    content:''; position:absolute; top:0; right:0; width:60px; height:60px;
+    border-top:2px solid var(--amber); border-inline-end:2px solid var(--amber);
+  }
+  .about-panel .mono{color:var(--amber); font-size:12.5px;}
+  .about-panel h3{color:var(--text-light); font-size:22px; margin:14px 0 18px;}
+  .about-panel ul{display:flex; flex-direction:column; gap:14px;}
+  .about-panel li{display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px; font-size:14.5px; color:var(--text-light-mid);}
+  .about-panel li b{color:var(--text-light); font-weight:600;}
+
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CATEGORIES : signature spec-frame cards ---------- */
+  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--steel-line);}
+  .cat-card{
+    background:var(--paper); padding:34px 28px; position:relative; min-height:230px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:background .25s;
+  }
+  .cat-card:hover{background:#fff;}
+  .cat-card::before, .cat-card::after,
+  .cat-card .cbr1, .cat-card .cbr2{
+    content:''; position:absolute; width:16px; height:16px; opacity:0; transition:opacity .25s;
+  }
+  .cat-card::before{top:10px; left:10px; border-top:2px solid var(--brass); border-inline-start:2px solid var(--brass);}
+  .cat-card::after{bottom:10px; right:10px; border-bottom:2px solid var(--brass); border-inline-end:2px solid var(--brass);}
+  .cat-card:hover::before, .cat-card:hover::after{opacity:1;}
+  .cat-code{font-family:var(--f-mono); font-size:12px; color:var(--accent-blue); letter-spacing:0.05em;}
+  .cat-icon{margin:16px 0;}
+  .cat-icon svg{width:40px; height:40px; stroke:var(--ink); fill:none; stroke-width:1.4;}
+  .cat-card h3{font-size:19px; margin-bottom:8px;}
+  .cat-card p{font-size:14px; color:var(--text-mid); line-height:1.55;}
+  @media(max-width:860px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.cat-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PROCESS ---------- */
+  .process-row{display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative;}
+  .process-row::before{
+    content:''; position:absolute; top:20px; left:8%; right:8%; height:1px; background:rgba(255,255,255,0.15);
+  }
+  .proc-step{padding:0 18px; position:relative; z-index:1;}
+  .proc-num{
+    width:40px; height:40px; border:1px solid var(--amber); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-family:var(--f-mono); color:var(--amber);
+    background:var(--ink); font-size:14px; margin-bottom:20px;
+  }
+  .proc-step h4{color:var(--text-light); font-size:16px; margin-bottom:8px; font-family:var(--f-display-ar); font-weight:600;}
+  body.lang-en .proc-step h4{font-family:var(--f-display-en); text-transform:none; letter-spacing:0;}
+  .proc-step p{color:var(--text-light-mid); font-size:13.5px;}
+  @media(max-width:860px){
+    .process-row{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .process-row::before{display:none;}
+  }
+
+  /* ---------- GALLERY / PRODUCTS SHOWCASE ---------- */
+  .showcase-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:2px; background:var(--steel-line);}
+  .showcase-main{background:var(--steel-dark); padding:46px; display:flex; flex-direction:column; justify-content:flex-end; min-height:420px; position:relative;}
+  .ph-pattern{position:absolute; inset:0; opacity:0.5;
+    background-image:repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 18px);
+  }
+  .showcase-main .mono{color:var(--brass); font-size:12.5px; position:relative;}
+  .showcase-main h3{color:var(--text-light); font-size:26px; margin:10px 0 12px; position:relative;}
+  .showcase-main p{color:var(--text-light-mid); font-size:15px; max-width:460px; position:relative;}
+  .showcase-side{display:flex; flex-direction:column; gap:2px;}
+  .showcase-side .cell{background:var(--paper); padding:26px 28px; flex:1; display:flex; flex-direction:column; justify-content:center; gap:6px;}
+  .showcase-side .cell .mono{color:var(--accent-blue); font-size:11.5px;}
+  .showcase-side .cell strong{font-size:16px;}
+  .showcase-side .cell span{font-size:13.5px; color:var(--text-mid);}
+  @media(max-width:860px){.showcase-grid{grid-template-columns:1fr;}}
+
+  /* ---------- LOCATION ---------- */
+  .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .loc-info .mono{color:var(--accent-blue); font-size:13px;}
+  .loc-info h2{margin:12px 0 18px; font-size:clamp(1.7rem,3vw,2.3rem);}
+  .loc-list{margin-top:22px; display:flex; flex-direction:column; gap:16px;}
+  .loc-list li{display:flex; gap:14px; font-size:15px; color:var(--text-mid);}
+  .loc-list b{color:var(--text-dark); min-width:110px; display:inline-block;}
+  .map-frame{border:1px solid var(--steel-line); height:360px; overflow:hidden; position:relative;}
+  .map-frame iframe{width:100%; height:100%; border:0; filter:grayscale(0.3) contrast(1.05);}
+  @media(max-width:860px){.loc-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1.15fr; gap:2px; background:var(--steel-line);}
+  .contact-info{background:var(--steel-dark); color:var(--text-light); padding:44px;}
+  .contact-info h3{font-size:22px; margin-bottom:16px;}
+  .contact-info p{color:var(--text-light-mid); font-size:14.5px; margin-bottom:28px;}
+  .contact-info .row{display:flex; gap:14px; margin-bottom:18px; font-size:14.5px; align-items:center;}
+  .contact-info .row .mono{color:var(--amber); font-size:12px; min-width:70px;}
+  .form-wrap{background:var(--paper); padding:44px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  .form-wrap input, .form-wrap textarea{
+    width:100%; padding:13px 14px; border:1px solid #d7dde1; background:#fff; font-family:inherit; font-size:14.5px;
+  }
+  .form-wrap input:focus, .form-wrap textarea:focus{outline:2px solid var(--accent-blue); outline-offset:1px;}
+  .form-wrap textarea{min-height:110px; resize:vertical; margin-bottom:20px;}
+  .form-wrap label{display:block; font-size:12.5px; color:var(--text-mid); margin-bottom:6px; font-family:var(--f-mono);}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;} .form-row{grid-template-columns:1fr;}}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink); color:var(--text-light-mid); padding:50px 0 26px; border-top:1px solid rgba(255,255,255,0.08);}
+  .foot-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,0.08);}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:22px; font-size:13px; flex-wrap:wrap; gap:10px;}
+  footer nav ul{display:flex; gap:22px;}
+  footer nav a{color:var(--text-light-mid); font-size:14px;}
+  footer nav a:hover{color:var(--text-light);}
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  :focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">TM</div>
+      <div class="logo-text">TECHNO<span> MACHINE</span></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
+        <li><a href="#products" data-ar="المكن" data-en="Machinery">المكن</a></li>
+        <li><a href="#process" data-ar="آلية العمل" data-en="Process">آلية العمل</a></li>
+        <li><a href="#location" data-ar="الموقع" data-en="Location">الموقع</a></li>
+        <li><a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a></li>
+      </ul>
+      <button class="lang-toggle" id="langBtn">EN</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow-line">
+      <div class="bar"></div>
+      <span data-ar="استيراد وتصدير المكن الصناعي منذ 2014" data-en="INDUSTRIAL MACHINERY IMPORT & EXPORT SINCE 2014">استيراد وتصدير المكن الصناعي منذ 2014</span>
+    </div>
+    <h1 data-ar='مكن صناعي بجودة موثوقة، <em>من المصنع لحد عندك</em>' data-en='Industrial machinery you can trust, <em>from the factory floor to yours</em>'>
+      مكن صناعي بجودة موثوقة، <em>من المصنع لحد عندك</em>
+    </h1>
+    <p class="lead" data-ar="تكنو مشين بتوفر لأصحاب المصانع والورش أحدث خطوط الإنتاج والمكن الصناعي المستورد، مع متابعة كاملة من الفحص لحد التركيب." data-en="Techno Machine supplies factory and workshop owners with the latest imported production lines and industrial machinery, with full support from inspection to installation.">
+      تكنو مشين بتوفر لأصحاب المصانع والورش أحدث خطوط الإنتاج والمكن الصناعي المستورد، مع متابعة كاملة من الفحص لحد التركيب.
+    </p>
+    <div class="hero-cta">
+      <a href="#products" class="btn btn-primary" data-ar="تصفح فئات المكن" data-en="Browse Machinery">تصفح فئات المكن</a>
+      <a href="#contact" class="btn btn-ghost" data-ar="اطلب عرض سعر" data-en="Request a Quote">اطلب عرض سعر</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><div class="stat-num">10+</div><div class="stat-label" data-ar="سنوات خبرة" data-en="Years of Experience">سنوات خبرة</div></div>
+      <div><div class="stat-num">500+</div><div class="stat-label" data-ar="عميل" data-en="Clients Served">عميل</div></div>
+      <div><div class="stat-num">15+</div><div class="stat-label" data-ar="دولة تصدير" data-en="Export Destinations">دولة تصدير</div></div>
+      <div><div class="stat-num">6</div><div class="stat-label" data-ar="فئات مكن رئيسية" data-en="Machinery Categories">فئات مكن رئيسية</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="pad" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="sec-head" style="margin-bottom:30px;">
+          <div class="eyebrow-line"><div class="bar"></div><span data-ar="من نحن" data-en="About Us">من نحن</span></div>
+          <h2 data-ar="شريككم الموثوق في تجهيز المصانع" data-en="Your trusted partner in factory equipment">شريككم الموثوق في تجهيز المصانع</h2>
+        </div>
+        <p data-ar="تكنو مشين شركة متخصصة في استيراد وتصدير المكن الصناعي بمختلف أنواعه، بنشتغل مع مصانع وورش من كل الأحجام على توفير خطوط إنتاج حديثة وموثوقة بأسعار تنافسية." data-en="Techno Machine is a specialized industrial machinery trading company. We work with factories and workshops of every size to deliver modern, reliable production lines at competitive prices.">
+          تكنو مشين شركة متخصصة في استيراد وتصدير المكن الصناعي بمختلف أنواعه، بنشتغل مع مصانع وورش من كل الأحجام على توفير خطوط إنتاج حديثة وموثوقة بأسعار تنافسية.
+        </p>
+        <p data-ar="بنختار كل قطعة مكنة بعناية من موردين معتمدين، وبنتابع الشحنة من لحظة التعاقد لحد وصولها وتركيبها عندكم، مع خدمة صيانة وقطع غيار مستمرة." data-en="Every machine is carefully sourced from certified suppliers, and we follow each shipment from contract to on-site installation, backed by ongoing maintenance and spare parts support.">
+          بنختار كل قطعة مكنة بعناية من موردين معتمدين، وبنتابع الشحنة من لحظة التعاقد لحد وصولها وتركيبها عندكم، مع خدمة صيانة وقطع غيار مستمرة.
+        </p>
+        <div class="value-list">
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div><strong data-ar="فحص قبل الشحن" data-en="Pre-shipment inspection">فحص قبل الشحن</strong><span data-ar="كل مكنة بتتفحص وبتتجرب قبل ما تتشحن" data-en="Every machine is tested and inspected before it ships">كل مكنة بتتفحص وبتتجرب قبل ما تتشحن</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div><strong data-ar="تخليص جمركي كامل" data-en="Full customs clearance">تخليص جمركي كامل</strong><span data-ar="بنتكفل بكل إجراءات الاستيراد والتصدير" data-en="We handle all import and export procedures">بنتكفل بكل إجراءات الاستيراد والتصدير</span></div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div><strong data-ar="دعم فني مستمر" data-en="Ongoing technical support">دعم فني مستمر</strong><span data-ar="فريق صيانة وقطع غيار جاهز بعد التسليم" data-en="A maintenance and spare-parts team ready after delivery">فريق صيانة وقطع غيار جاهز بعد التسليم</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-panel">
+        <div class="mono">TM / PROFILE</div>
+        <h3 data-ar="بطاقة الشركة" data-en="Company Snapshot">بطاقة الشركة</h3>
+        <ul>
+          <li><span data-ar="تأسست" data-en="Founded">تأسست</span> <b>2014</b></li>
+          <li><span data-ar="التخصص" data-en="Specialty">التخصص</span> <b data-ar="استيراد وتصدير مكن صناعي" data-en="Industrial machinery trade">استيراد وتصدير مكن صناعي</b></li>
+          <li><span data-ar="النطاق" data-en="Reach">النطاق</span> <b data-ar="محلي ودولي" data-en="Local & International">محلي ودولي</b></li>
+          <li><span data-ar="عدد الفئات" data-en="Categories">عدد الفئات</span> <b>6+</b></li>
+          <li><span data-ar="خدمة ما بعد البيع" data-en="After-sales">خدمة ما بعد البيع</span> <b data-ar="متاحة" data-en="Available">متاحة</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="pad" id="products" style="background:var(--mist);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line"><div class="bar"></div><span data-ar="فئات المكن" data-en="Machinery Categories">فئات المكن</span></div>
+      <h2 data-ar="كل اللي محتاجه مصنعك في مكان واحد" data-en="Everything your factory needs, in one place">كل اللي محتاجه مصنعك في مكان واحد</h2>
+      <p data-ar="بنغطي أكتر من 6 فئات من المكن الصناعي، وكل فئة بتتضم موديلات متعددة حسب حجم الإنتاج المطلوب." data-en="We cover more than 6 categories of industrial machinery, each with multiple models suited to your production scale.">بنغطي أكتر من 6 فئات من المكن الصناعي، وكل فئة بتتضم موديلات متعددة حسب حجم الإنتاج المطلوب.</p>
+    </div>
+
+    <div class="cat-grid">
+      <!-- Category 1 -->
+      <div class="cat-card">
+        <span class="cat-code">CAT / 01</span>
+        <div class="cat-icon"><svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="22" rx="1"/><path d="M14 16v-4a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v4"/><line x1="8" y1="26" x2="40" y2="26"/><line x1="18" y1="30" x2="18" y2="34"/><line x1="30" y1="30" x2="30" y2="34"/></svg></div>
+        <div>
+          <h3 data-ar="مكن التعبئة والتغليف" data-en="Packaging & Filling Machines">مكن التعبئة والتغليف</h3>
+          <p data-ar="خطوط تعبئة سوائل ومساحيق وتغليف أوتوماتيك بمعدلات إنتاج مختلفة." data-en="Liquid and powder filling lines, and automatic packaging systems at varying output rates.">خطوط تعبئة سوائل ومساحيق وتغليف أوتوماتيك بمعدلات إنتاج مختلفة.</p>
+        </div>
+      </div>
+      <!-- Category 2 -->
+      <div class="cat-card">
+        <span class="cat-code">CAT / 02</span>
+        <div class="cat-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="9"/><path d="M24 8v5M24 35v5M8 24h5M35 24h5M13 13l3.5 3.5M31.5 31.5L35 35M13 35l3.5-3.5M31.5 16.5L35 13"/></svg></div>
+        <div>
+          <h3 data-ar="مكن التصنيع الغذائي" data-en="Food Processing Machinery">مكن التصنيع الغذائي</h3>
+          <p data-ar="معدات خلط وطحن وتصنيع منتجات غذائية مطابقة لمعايير السلامة." data-en="Mixing, grinding, and food-production equipment that meets safety standards.">معدات خلط وطحن وتصنيع منتجات غذائية مطابقة لمعايير السلامة.</p>
+        </div>
+      </div>
+      <!-- Category 3 -->
+      <div class="cat-card">
+        <span class="cat-code">CAT / 03</span>
+        <div class="cat-icon"><svg viewBox="0 0 48 48"><rect x="6" y="10" width="24" height="28" rx="1"/><line x1="30" y1="16" x2="42" y2="16"/><line x1="30" y1="24" x2="42" y2="24"/><line x1="30" y1="32" x2="38" y2="32"/><circle cx="14" cy="30" r="3"/></svg></div>
+        <div>
+          <h3 data-ar="مكن CNC وتشغيل المعادن" data-en="CNC & Metalworking Machines">مكن CNC وتشغيل المعادن</h3>
+          <p data-ar="ماكينات تشغيل وتفريز وخراطة معادن بدقة عالية للورش والمصانع." data-en="High-precision milling, turning, and metal-cutting machines for workshops and plants.">ماكينات تشغيل وتفريز وخراطة معادن بدقة عالية للورش والمصانع.</p>
+        </div>
+      </div>
+      <!-- Category 4 -->
+      <div class="cat-card">
+        <span class="cat-code">CAT / 04</span>
+        <div class="cat-icon"><svg viewBox="0 0 48 48"><path d="M8 34V16a2 2 0 0 1 2-2h10l6 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2Z"/><line x1="18" y1="26" x2="30" y2="26"/></svg></div>
+        <div>
+          <h3 data-ar="مكن حقن البلاستيك" data-en="Plastic Injection Machines">مكن حقن البلاستيك</h3>
+          <p data-ar="ماكينات حقن وتشكيل بلاستيك بأحجام قوالب وقدرات إنتاج متنوعة." data-en="Plastic injection and moulding machines in a range of mould sizes and output capacities.">ماكينات حقن وتشكيل بلاستيك بأحجام قوالب وقدرات إنتاج متنوعة.</p>
+        </div>
+      </div>
+      <!-- Category 5 -->
+      <div class="cat-card">
+        <span class="cat-code">CAT / 05</span>
+        <div class="cat-icon"><svg viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="14" rx="1"/><rect x="14" y="26" width="20" height="14" rx="1"/><line x1="18" y1="31" x2="30" y2="31"/><line x1="18" y1="35" x2="26" y2="35"/></svg></div>
+        <div>
+          <h3 data-ar="مكن الطباعة" data-en="Printing Machines">مكن الطباعة</h3>
+          <p data-ar="ماكينات طباعة فليكسو وأوفست لتغليفات المنتجات والكراتين." data-en="Flexo and offset printing machines for product packaging and cartons.">ماكينات طباعة فليكسو وأوفست لتغليفات المنتجات والكراتين.</p>
+        </div>
+      </div>
+      <!-- Category 6 -->
+      <div class="cat-card">
+        <span class="cat-code">CAT / 06</span>
+        <div class="cat-icon"><svg viewBox="0 0 48 48"><path d="M24 6l16 9v18l-16 9-16-9V15Z"/><path d="M24 6v18M8 15l16 9 16-9M24 24v18"/></svg></div>
+        <div>
+          <h3 data-ar="قطع غيار ومهمات صناعية" data-en="Spare Parts & Industrial Equipment">قطع غيار ومهمات صناعية</h3>
+          <p data-ar="قطع غيار أصلية وبديلة لكل فئات المكن، متوفرة بشكل مستمر." data-en="Original and compatible spare parts for every machinery category, always in stock.">قطع غيار أصلية وبديلة لكل فئات المكن، متوفرة بشكل مستمر.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="pad on-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line"><div class="bar" style="background:var(--amber)"></div><span style="color:var(--amber)" data-ar="مكن مميز" data-en="Featured Machinery">مكن مميز</span></div>
+      <h2 data-ar="نماذج من أحدث الشحنات" data-en="From our latest shipments">نماذج من أحدث الشحنات</h2>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-main">
+        <div class="ph-pattern"></div>
+        <div class="mono">SHIPMENT / 2026-014</div>
+        <h3 data-ar="خط إنتاج تعبئة أوتوماتيك بالكامل" data-en="Fully automatic filling production line">خط إنتاج تعبئة أوتوماتيك بالكامل</h3>
+        <p data-ar="مكان الصورة الفعلية للمكنة — هيتم استبداله بصور حقيقية من المصنع بعد توفيرها." data-en="Placeholder for the actual machine photo — to be replaced with real factory images once provided.">مكان الصورة الفعلية للمكنة — هيتم استبداله بصور حقيقية من المصنع بعد توفيرها.</p>
+      </div>
+      <div class="showcase-side">
+        <div class="cell">
+          <span class="mono">01</span>
+          <strong data-ar="ماكينة CNC خمس محاور" data-en="5-Axis CNC Machine">ماكينة CNC خمس محاور</strong>
+          <span data-ar="دقة تشغيل تصل حتى 0.01 مم" data-en="Machining precision up to 0.01mm">دقة تشغيل تصل حتى 0.01 مم</span>
+        </div>
+        <div class="cell">
+          <span class="mono">02</span>
+          <strong data-ar="ماكينة حقن بلاستيك 250 طن" data-en="250-Ton Plastic Injection Unit">ماكينة حقن بلاستيك 250 طن</strong>
+          <span data-ar="مناسبة لقوالب الإنتاج الكبير" data-en="Suited to large-scale mould production">مناسبة لقوالب الإنتاج الكبير</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="pad on-dark" id="process" style="padding-top:60px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line"><div class="bar"></div><span data-ar="آلية العمل" data-en="How It Works">آلية العمل</span></div>
+      <h2 data-ar="من الطلب لحد التشغيل عندك" data-en="From order to operating on your floor">من الطلب لحد التشغيل عندك</h2>
+    </div>
+    <div class="process-row">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <h4 data-ar="الطلب والاستفسار" data-en="Inquiry">الطلب والاستفسار</h4>
+        <p data-ar="بتبعتلنا احتياجاتك وبنرشحلك المكنة المناسبة لحجم إنتاجك." data-en="You send us your requirements and we recommend the right machine for your production scale.">بتبعتلنا احتياجاتك وبنرشحلك المكنة المناسبة لحجم إنتاجك.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <h4 data-ar="الفحص والمعاينة" data-en="Inspection">الفحص والمعاينة</h4>
+        <p data-ar="بنفحص المكنة عند المورد ونجهز تقرير حالة كامل قبل الشحن." data-en="We inspect the machine at the supplier and prepare a full condition report before shipping.">بنفحص المكنة عند المورد ونجهز تقرير حالة كامل قبل الشحن.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <h4 data-ar="الشحن والتخليص" data-en="Shipping & Clearance">الشحن والتخليص</h4>
+        <p data-ar="بنتابع الشحن والتخليص الجمركي بالكامل نيابة عنك." data-en="We manage shipping and full customs clearance on your behalf.">بنتابع الشحن والتخليص الجمركي بالكامل نيابة عنك.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <h4 data-ar="التسليم والتركيب" data-en="Delivery & Installation">التسليم والتركيب</h4>
+        <p data-ar="فريقنا بيركب المكنة عندك ويتأكد إنها شغالة بكفاءة." data-en="Our team installs the machine on-site and verifies it runs at full efficiency.">فريقنا بيركب المكنة عندك ويتأكد إنها شغالة بكفاءة.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">05</div>
+        <h4 data-ar="الصيانة المستمرة" data-en="Ongoing Maintenance">الصيانة المستمرة</h4>
+        <p data-ar="متابعة دورية وقطع غيار جاهزة على مدار السنة." data-en="Regular follow-up and spare parts available year-round.">متابعة دورية وقطع غيار جاهزة على مدار السنة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="pad" id="location">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="loc-info">
+        <div class="mono">TM / LOCATION</div>
+        <h2 data-ar="زورونا في مقر الشركة" data-en="Visit our headquarters">زورونا في مقر الشركة</h2>
+        <p style="color:var(--text-mid); font-size:15.5px;" data-ar="محتاجين تشوفوا المكن أو تتناقشوا مع فريقنا وش لوش؟ تقدروا تحجزوا زيارة للمعرض في أي وقت خلال أيام العمل." data-en="Want to see the machinery in person or talk directly with our team? You can arrange a showroom visit any working day.">محتاجين تشوفوا المكن أو تتناقشوا مع فريقنا وش لوش؟ تقدروا تحجزوا زيارة للمعرض في أي وقت خلال أيام العمل.</p>
+        <ul class="loc-list">
+          <li><b data-ar="العنوان" data-en="Address">العنوان</b><span data-ar="المنطقة الصناعية، القاهرة، مصر — [ضع العنوان التفصيلي هنا]" data-en="Industrial Zone, Cairo, Egypt — [Insert full address here]">المنطقة الصناعية، القاهرة، مصر — [ضع العنوان التفصيلي هنا]</span></li>
+          <li><b data-ar="مواعيد العمل" data-en="Working Hours">مواعيد العمل</b><span data-ar="السبت – الخميس، 9 ص – 5 م" data-en="Sat – Thu, 9 AM – 5 PM">السبت – الخميس، 9 ص – 5 م</span></li>
+          <li><b data-ar="التليفون" data-en="Phone">التليفون</b><span>+20 100 000 0000</span></li>
+        </ul>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Cairo,Egypt&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact" style="background:var(--mist); padding-top:40px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow-line"><div class="bar"></div><span data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</span></div>
+      <h2 data-ar="جاهزين نجاوب على استفسارك" data-en="Ready to answer your questions">جاهزين نجاوب على استفسارك</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 data-ar="بيانات التواصل" data-en="Get in Touch">بيانات التواصل</h3>
+        <p data-ar="ابعتلنا تفاصيل المكنة اللي محتاجها وهنرجعلك بعرض سعر خلال 24 ساعة." data-en="Send us the machine details you need and we'll get back to you with a quote within 24 hours.">ابعتلنا تفاصيل المكنة اللي محتاجها وهنرجعلك بعرض سعر خلال 24 ساعة.</p>
+        <div class="row"><span class="mono">TEL</span> <span>+20 100 000 0000</span></div>
+        <div class="row"><span class="mono">WA</span> <span>+20 100 000 0000</span></div>
+        <div class="row"><span class="mono">MAIL</span> <span>info@technomachine.com</span></div>
+        <div class="row"><span class="mono" data-ar="عنوان" data-en="ADDR">عنوان</span> <span data-ar="المنطقة الصناعية، القاهرة" data-en="Industrial Zone, Cairo">المنطقة الصناعية، القاهرة</span></div>
+      </div>
+      <div class="form-wrap">
+        <div class="form-row">
+          <div>
+            <label data-ar="الاسم" data-en="Name">الاسم</label>
+            <input type="text" placeholder="" data-ph-ar="اسمك بالكامل" data-ph-en="Your full name">
+          </div>
+          <div>
+            <label data-ar="رقم التليفون" data-en="Phone Number">رقم التليفون</label>
+            <input type="text" data-ph-ar="01xxxxxxxxx" data-ph-en="e.g. +20 1xxxxxxxxx">
+          </div>
+        </div>
+        <div class="form-row">
+          <div style="grid-column:1/-1;">
+            <label data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+            <input type="email" data-ph-ar="example@email.com" data-ph-en="example@email.com">
+          </div>
+        </div>
+        <label data-ar="الرسالة" data-en="Message">الرسالة</label>
+        <textarea data-ph-ar="اكتب تفاصيل المكنة أو الاستفسار اللي محتاجه..." data-ph-en="Describe the machine or inquiry you need..."></textarea>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;" id="sendBtn" data-ar="إرسال الطلب" data-en="Send Request">إرسال الطلب</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo">
+        <div class="logo-mark">TM</div>
+        <div class="logo-text">TECHNO<span> MACHINE</span></div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
+          <li><a href="#products" data-ar="المكن" data-en="Machinery">المكن</a></li>
+          <li><a href="#process" data-ar="آلية العمل" data-en="Process">آلية العمل</a></li>
+          <li><a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span data-ar="© 2026 تكنو مشين لاستيراد وتصدير المكن الصناعي. جميع الحقوق محفوظة." data-en="© 2026 Techno Machine Industrial Import & Export. All rights reserved.">© 2026 تكنو مشين لاستيراد وتصدير المكن الصناعي. جميع الحقوق محفوظة.</span>
+      <span class="mono">EG · EST. 2014</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const langBtn = document.getElementById('langBtn');
+  const body = document.body;
+  let currentLang = 'ar';
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    body.classList.toggle('lang-en', lang === 'en');
+    langBtn.textContent = lang === 'ar' ? 'EN' : 'AR';
+
+    document.querySelectorAll('[data-ar]').forEach(el => {
+      const val = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
+      if(val !== null){
+        el.innerHTML = val;
+      }
+    });
+    document.querySelectorAll('[data-ph-ar]').forEach(el => {
+      const val = el.getAttribute(lang === 'ar' ? 'data-ph-ar' : 'data-ph-en');
+      if(val !== null){ el.setAttribute('placeholder', val); }
+    });
+  }
+
+  langBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    applyLang(currentLang);
+  });
+
+  // init placeholders on load
+  document.querySelectorAll('[data-ph-ar]').forEach(el => {
+    el.setAttribute('placeholder', el.getAttribute('data-ph-ar'));
+  });
+
+  document.getElementById('sendBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    alert(currentLang === 'ar' ? 'شكراً لتواصلك! هذا نموذج تجريبي — لازم نربطه بخدمة إرسال إيميل فعلية.' : 'Thanks for reaching out! This is a demo form — it needs to be connected to a real email service.');
+  });
+</script>
+
+</body>
+</html>
