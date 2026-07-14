@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "code": "CAT / 01",
+    "icon": "packaging",
+    "title_ar": "مكن التعبئة والتغليف",
+    "title_en": "Packaging & Filling Machines",
+    "desc_ar": "خطوط تعبئة سوائل ومساحيق وتغليف أوتوماتيك بمعدلات إنتاج مختلفة.",
+    "desc_en": "Liquid and powder filling lines, and automatic packaging systems at varying output rates."
+  },
+  {
+    "id": 2,
+    "code": "CAT / 02",
+    "icon": "food",
+    "title_ar": "مكن التصنيع الغذائي",
+    "title_en": "Food Processing Machinery",
+    "desc_ar": "معدات خلط وطحن وتصنيع منتجات غذائية مطابقة لمعايير السلامة.",
+    "desc_en": "Mixing, grinding, and food-production equipment that meets safety standards."
+  },
+  {
+    "id": 3,
+    "code": "CAT / 03",
+    "icon": "cnc",
+    "title_ar": "مكن CNC وتشغيل المعادن",
+    "title_en": "CNC & Metalworking Machines",
+    "desc_ar": "ماكينات تشغيل وتفريز وخراطة معادن بدقة عالية للورش والمصانع.",
+    "desc_en": "High-precision milling, turning, and metal-cutting machines for workshops and plants."
+  },
+  {
+    "id": 4,
+    "code": "CAT / 04",
+    "icon": "injection",
+    "title_ar": "مكن حقن البلاستيك",
+    "title_en": "Plastic Injection Machines",
+    "desc_ar": "ماكينات حقن وتشكيل بلاستيك بأحجام قوالب وقدرات إنتاج متنوعة.",
+    "desc_en": "Plastic injection and moulding machines in a range of mould sizes and output capacities."
+  },
+  {
+    "id": 5,
+    "code": "CAT / 05",
+    "icon": "printing",
+    "title_ar": "مكن الطباعة",
+    "title_en": "Printing Machines",
+    "desc_ar": "ماكينات طباعة فليكسو وأوفست لتغليفات المنتجات والكراتين.",
+    "desc_en": "Flexo and offset printing machines for product packaging and cartons."
+  },
+  {
+    "id": 6,
+    "code": "CAT / 06",
+    "icon": "spareParts",
+    "title_ar": "قطع غيار ومهمات صناعية",
+    "title_en": "Spare Parts & Industrial Equipment",
+    "desc_ar": "قطع غيار أصلية وبديلة لكل فئات المكن، متوفرة بشكل مستمر.",
+    "desc_en": "Original and compatible spare parts for every machinery category, always in stock."
+  }
+]
