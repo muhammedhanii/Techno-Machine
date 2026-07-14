@@ -31,13 +31,14 @@ const rateLimit = (req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
+app.use(rateLimit);
 
 app.use('/api/products', require('./routes/products'));
 app.use('/api/contact', require('./routes/contact'));
 
 if (process.env.NODE_ENV === 'production') {
   const distPath = path.resolve(__dirname, '../frontend/dist');
-  app.use(express.static(distPath));
+  app.use(rateLimit, express.static(distPath));
   app.get('*', rateLimit, (_req, res) => {
     res.sendFile(path.join(distPath, 'index.html'));
   });

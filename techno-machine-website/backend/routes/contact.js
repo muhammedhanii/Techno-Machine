@@ -26,8 +26,6 @@ const rateLimit = (req, res, next) => {
   return next();
 };
 
-router.use(rateLimit);
-
 const ensureContactsFile = async () => {
   try {
     await fs.access(contactsPath);
@@ -42,7 +40,7 @@ const readContacts = async () => {
   return JSON.parse(content);
 };
 
-router.post('/', async (req, res) => {
+router.post('/', rateLimit, async (req, res) => {
   const name = req.body?.name?.trim();
   const phone = req.body?.phone?.trim();
   const email = req.body?.email?.trim() || '';
@@ -82,7 +80,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/', rateLimit, async (req, res) => {
   const providedKey = req.get('ADMIN_KEY') || req.get('x-admin-key');
 
   if (!process.env.ADMIN_KEY || providedKey !== process.env.ADMIN_KEY) {

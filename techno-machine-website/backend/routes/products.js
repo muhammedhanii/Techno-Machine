@@ -26,9 +26,7 @@ const rateLimit = (req, res, next) => {
   return next();
 };
 
-router.use(rateLimit);
-
-router.get('/', async (_req, res) => {
+router.get('/', rateLimit, async (_req, res) => {
   try {
     const content = await fs.readFile(productsPath, 'utf-8');
     res.json(JSON.parse(content));
